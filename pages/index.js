@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home({data}) {
   return (
@@ -17,23 +18,26 @@ export default function Home({data}) {
           {/* add also an image tag */}
         
           
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             
-              <a href="/about">About</a>
+              <Link href="/about">About</Link>
           
-              <a href="/events">Events</a>
+              <Link href="/events">Events</Link>
         
         </nav>
       </header>
       <main className={styles.main}>
         {/* create 3 div */}
     
-          {data.map((cat) => (
-            <a key={cat.id } href={`/events/${cat.id}`}>
+        {data.map((cat) => (
+          <Link key={cat.id} href={`/events/${cat.id}`} passHref>
+              
               <Image width={200} height={'100'} alt={cat.title} src={cat.image} />
               <h2>{cat.title}</h2>
               <p>{ cat.description}</p>
-            </a>
+            
+            </Link>
+          
           
           ))}
       </main>

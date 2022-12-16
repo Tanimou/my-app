@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function event1({ data }) {
   return (
@@ -7,11 +8,14 @@ export default function event1({ data }) {
       <div>
         {/* create 3 div */}
         {data.map((cat) => (
-          <a key={cat.id } href={`/events/${cat.id}`}>
+          <Link key={cat.id } href={`/events/${cat.id}`} passHref>
+            
             <Image width={200} height={'100'} alt={cat.title} src={cat.image} />
             <h2>{cat.title}</h2>
             <p>{cat.description}</p>
-          </a>
+          
+          </Link>
+        
 
         ))}
     
