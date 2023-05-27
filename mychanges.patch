@@ -1,0 +1,1612 @@
+diff --git a/.devcontainer/devcontainer.json b/.devcontainer/devcontainer.json
+new file mode 100644
+index 0000000..1727d61
+--- /dev/null
++++ b/.devcontainer/devcontainer.json
+@@ -0,0 +1,819 @@
++{
++    "image": "mcr.microsoft.com/devcontainers/universal:2",
++
++    "customizations": {
++        "vscode": {
++            "extensions": [
++				"GitHub.copilot-labs",
++				"GitHub.copilot-chat",
++				"GitHub.copilot-nightly",
++				"formulahendry.auto-close-tag",
++				"formulahendry.auto-rename-tag",
++				"ms-vscode.azure-repos",
++				"nick-rudenko.back-n-forth",
++				"aaron-bond.better-comments",
++				"DryWolf.dark-plus-plus-theme",
++				"ms-vscode-remote.remote-containers",
++				"usernamehw.errorlens",
++				"rodrigovallades.es7-react-js-snippets",
++				"dsznajder.es7-react-js-snippets",
++				"miguelsolorio.fluent-icons",
++				"GitHub.codespaces",
++				"GitHub.remotehub",
++				"xabikos.JavaScriptSnippets",
++				"akamud.vscode-javascript-snippet-pack",
++				"PKief.material-icon-theme",
++				"equinusocio.vsc-material-theme-icons",
++				"IBM.output-colorizer",
++				"alefragnani.project-manager",
++				"ms-vscode-remote.remote-ssh",
++				"ms-vscode-remote.remote-ssh-edit",
++				"ms-vscode.remote-server",
++				"ms-vscode-remote.vscode-remote-extensionpack",
++				"ms-vscode.remote-explorer",
++				"ms-vscode.remote-repositories",
++				"sadeghpm.sql-snippets",
++				"rohit-chouhan.sqlite-snippet",
++				"qwtel.sqlite-viewer",
++				"peaceshi.syntax-highlight",
++				"tomoki1207.pdf",
++				"ms-vscode-remote.remote-wsl",
++				"ms-vsliveshare.vsliveshare-audio",
++				"formulahendry.auto-complete-tag",
++				"steoates.autoimport",
++				"NuclleaR.vscode-extension-auto-import",
++				"mgmcdermott.vscode-language-babel",
++				"AESSoft.aessoft-class-autocomplete",
++				"hediet.debug-visualizer",
++				"ms-azuretools.vscode-docker",
++				"p1c2u.docker-compose",
++				"formulahendry.docker-explorer",
++				"magnobiet.docker-extension-pack",
++				"henriiik.docker-linter",
++				"dbaeumer.vscode-eslint",
++				"Wattenberger.footsteps",
++				"teledemic.branch-warnings",
++				"adrianwilczynski.format-selection-as-html",
++				"dzhavat.git-cheatsheet",
++				"TechieCouch.git-essentials",
++				"donjayamanne.git-extension-pack",
++				"mhutchie.git-graph",
++				"donjayamanne.githistory",
++				"shaharkazaz.git-merger",
++				"felipecaputo.git-project-manager",
++				"howardzuo.vscode-git-tags",
++				"letmaik.git-tree-compare",
++				"shyykoserhiy.git-autoconfig",
++				"github.vscode-github-actions",
++				"fabiospampinato.vscode-github-notifications-bell",
++				"GitHub.vscode-pull-request-github",
++				"codezombiech.gitignore",
++				"sleepingsaint.gitignore-generator",
++				"eamodio.gitlens",
++				"TeamHub.teamhub",
++				"spywhere.guides",
++				"AndersEAndersen.html-class-suggestions",
++				"ecmel.vscode-html-css",
++				"mohd-akram.vscode-html-format",
++				"boundarystudio.html-extentions-pack",
++				"solnurkarim.html-to-css-autocompletion",
++				"evileumas.html-to-javascript-string",
++				"HTMLHint.vscode-htmlhint",
++				"GeriYoco.vscode-image-gallery",
++				"kisstkondoros.vscode-gutter-preview",
++				"oderwat.indent-rainbow",
++				"moalamri.inline-fold",
++				"VisualStudioExptTeam.vscodeintellicode",
++				"VisualStudioExptTeam.intellicode-api-usage-examples",
++				"Zignd.html-css-class-completion",
++				"ms-vscode.js-debug-nightly",
++				"AdrienTecher.just-cant-git-enough",
++				"ms-vscode.live-server",
++				"yandeu.five-server",
++				"lostintangent.vsls-whiteboard",
++				"Cardinal90.multi-cursor-case-preserve",
++				"ziyasal.vscode-open-in-github",
++				"christian-kohler.path-intellisense",
++				"ms-vscode.powershell",
++				"esbenp.prettier-vscode",
++				"mohsen1.prettify-json",
++				"mechatroner.rainbow-csv",
++				"RapidAPI.vscode-rapidapi-client",
++				"rapidapi.vscode-services",
++				"avraammavridis.vsc-react-documentation",
++				"mrmlnc.vscode-scss",
++				"meganrogge.template-string-converter",
++				"loiane.ts-extension-pack",
++				"pmneo.tsimporter",
++				"redhat.vscode-yaml"
++			],
++			"settings": {
++                "emmet.triggerExpansionOnTab": true,
++                "gitProjectManager.baseProjectsFolders": [
++                    "D:\\tanimou\\Programmation projects\\Git Projects"
++                ],
++                "emmet.showSuggestionsAsSnippets": true,
++                "diffEditor.codeLens": true,
++                "git.autofetch": true,
++                "githubPullRequests.fileListLayout": "flat",
++                "editor.suggestSelection": "first",
++                "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
++                "files.exclude": {
++                    "**/.classpath": true,
++                    "**/.project": true,
++                    "**/.settings": true,
++                    "**/.factorypath": true
++                },
++                "indentRainbow.includedLanguages": [],
++                "indentRainbow.ignoreLinePatterns": [
++                    "/[ \t]* [*]/g", // lines begining with <whitespace><space>*
++                    "/[ \t]+[/]{2}/g" // lines begininning with <whitespace>//
++                ],
++                "indentRainbow.ignoreErrorLanguages": [
++                    //"javascript"
++                ],
++                "indentRainbow.colorOnWhiteSpaceOnly": true,
++                "emmet.includeLanguages": {
++                    "django-html": "html",
++                    "smarty": "html"
++                },
++                "files.associations": {
++                    "**/*.html": "html",
++                    "**/templates/**/*.html": "django-html",
++                    "**/templates/**/*": "django-txt",
++                    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
++                },
++                "editor.tokenColorCustomizations": {
++                    "textMateRules": [
++                        {
++                            "scope": [
++                                "punctuation.section.embedded.begin.smarty",
++                                "punctuation.section.embedded.end.smarty"
++                            ],
++                            "settings": {
++                                "foreground": "#FFA500",
++                                "fontStyle": "bold"
++                            }
++                        },
++                        {
++                            "scope": [
++                                "keyword.control.smarty",
++                                "support.function.built-in.smarty"
++                            ],
++                            "settings": {
++                                "foreground": "#16A016",
++                                "fontStyle": "bold"
++                            }
++                        },
++                        {
++                            "scope": [
++                                "variable.parameter.smarty"
++                            ],
++                            "settings": {
++                                "foreground": "#AE23A3",
++                                "fontStyle": "bold"
++                            }
++                        },
++                        {
++                            "scope": [
++                                "source.smarty"
++                            ],
++                            "settings": {
++                                "foreground": "#D17C32"
++                            }
++                        }
++                    ]
++                },
++                "smarty.highhlight": true,
++                "smarty.highlightColor": {
++                    "dark": "#FFFFFF25",
++                    "light": "#FFFA0040"
++                },
++                "code-runner.executorMap": {
++                    "javascript": "node",
++                    "java": "cd $dir && javac *.java && java $fileName",
++                    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
++                    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
++                    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
++                    "php": "php",
++                    "python": "python -u",
++                    "html": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\"",
++                    "perl": "perl",
++                    "perl6": "perl6",
++                    "ruby": "ruby",
++                    "go": "go run",
++                    "lua": "lua",
++                    "groovy": "groovy",
++                    "powershell": "powershell -ExecutionPolicy ByPass -File",
++                    "bat": "cmd /c",
++                    "shellscript": "bash",
++                    "fsharp": "fsi",
++                    "csharp": "scriptcs",
++                    "vbscript": "cscript //Nologo",
++                    "typescript": "ts-node",
++                    "coffeescript": "coffee",
++                    "scala": "scala",
++                    "swift": "swift",
++                    "julia": "julia",
++                    "crystal": "crystal",
++                    "ocaml": "ocaml",
++                    "r": "Rscript",
++                    "applescript": "osascript",
++                    "clojure": "lein exec",
++                    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
++                    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
++                    "racket": "racket",
++                    "scheme": "csi -script",
++                    "ahk": "autohotkey",
++                    "autoit": "autoit3",
++                    "dart": "dart",
++                    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
++                    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
++                    "haskell": "runhaskell",
++                    "nim": "nim compile --verbosity:0 --hints:off --run",
++                    "lisp": "sbcl --script",
++                    "kit": "kitc --run",
++                    "v": "v run",
++                    "sass": "sass --style expanded",
++                    "scss": "scss --style expanded",
++                    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
++                    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
++                    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
++                    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
++                    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
++                },
++                "code-runner.executorMapByGlob": {
++                    "pom.xml": "cd $dir && mvn clean package",
++                    "*.js": "node"
++                },
++                "editor.defaultFormatter": "esbenp.prettier-vscode",
++                // "[java]": {
++                // "editor.defaultFormatter": "redhat.java"
++                //},
++                "editor.formatOnPaste": true,
++                "tabnine.experimentalAutoImports": true,
++                "tabnine.receiveBetaChannelUpdates": true,
++                "sync.gist": "6aab2020a9d558f8da5f150eecc03392",
++                "sync.autoDownload": true,
++                "sync.autoUpload": true,
++                "sync.quietSync": true,
++                "sync.forceDownload": true,
++                "sync.forceUpload": true,
++                "sync.removeExtensions": false,
++                "sync.syncExtensions": true,
++                "vscode-edge-devtools.mirrorEdits": true,
++                "better-comments.highlightPlainText": true,
++                "path-intellisense.autoSlashAfterDirectory": true,
++                "path-intellisense.showHiddenFiles": true,
++                "files.autoSave": "afterDelay",
++                "editor.linkedEditing": true,
++                "liveServer.settings.donotShowInfoMsg": true,
++                "code-runner.saveFileBeforeRun": true,
++                "code-runner.saveAllFilesBeforeRun": true,
++                "code-runner.clearPreviousOutput": true,
++                "editor.bracketPairColorization.enabled": true,
++                "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
++                "bracket-pair-colorizer-2.forceIterationColorCycle": true,
++                "bracket-pair-colorizer-2.showBracketsInGutter": true,
++                "bracket-pair-colorizer-2.showBracketsInRuler": true,
++                "todohighlight.isEnable": true,
++                "eslint.alwaysShowStatus": true,
++                "eslint.format.enable": true,
++                "editor.formatOnSave": true,
++                "debug.javascript.breakOnConditionalError": true,
++                "editor.semanticTokenColorCustomizations": {
++                    "[One Dark Pro]": {
++                        // Apply to this theme only
++                        "enabled": true,
++                        "rules": {
++                            "magicFunction:python": "#ee0000",
++                            "function.declaration:python": "#990000",
++                            "*.decorator:python": "#0000dd",
++                            "*.typeHint:python": "#5500aa",
++                            "*.typeHintComment:python": "#aaaaaa"
++                        }
++                    }
++                },
++                "[python]": {
++                    "editor.defaultFormatter": "ms-python.black-formatter",
++                    "editor.formatOnSave": true,
++                    "editor.codeActionsOnSave": {
++                        "source.organizeImports": true
++                    },
++                    "editor.formatOnType": true
++                },
++                "isort.args": [
++                    "--profile",
++                    "black"
++                ],
++                "better-comments.tags": [
++                    {
++                        "tag": "!",
++                        "color": "#FF2D00",
++                        "strikethrough": false,
++                        "underline": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "&",
++                        "color": "#FF06A0",
++                        "strikethrough": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "~",
++                        "color": "#BE00FF",
++                        "strikethrough": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "^",
++                        "color": "#EAF622",
++                        "strikethrough": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "?",
++                        "color": "#3498DB",
++                        "strikethrough": false,
++                        "underline": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "//",
++                        "color": "#474747",
++                        "strikethrough": false,
++                        "underline": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "todo",
++                        "color": "#FF8C00",
++                        "strikethrough": false,
++                        "underline": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "*",
++                        "color": "#98C379",
++                        "strikethrough": false,
++                        "underline": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    },
++                    {
++                        "tag": "#",
++                        "color": "#B99999",
++                        "strikethrough": false,
++                        "underline": false,
++                        "backgroundColor": "transparent",
++                        "bold": false,
++                        "italic": false
++                    }
++                ],
++                "python.testing.pytestEnabled": true,
++                "pythonTestExplorer.testFramework": "pytest",
++                "python.analysis.inlayHints.functionReturnTypes": true,
++                "python.analysis.inlayHints.variableTypes": true,
++                "python.testing.unittestEnabled": true,
++                "python.testing.pytestArgs": [
++                    "test_*.py",
++                    "."
++                ],
++                "python.testing.unittestArgs": [
++                    "-v",
++                    "-s .",
++                    "test",
++                    ".",
++                    "-p *test",
++                    "*test*.py"
++                ],
++                "python.testing.cwd": "D:\\tanimou\\Programmation projects\\Python_Tutorial",
++                "gitProjectManager.displayProjectPath": true,
++                "gitProjectManager.recentProjectsListSize": 10,
++                "gitProjectManager.storeRepositoriesBetweenSessions": true,
++                "gitProjectManager.warnIfFolderNotFound": true,
++                "git-autoconfig.configList": [
++                    {
++                        "user.email": "tanimou@live.fr",
++                        "user.name": "Tanimou Cisse"
++                    },
++                    {
++                        "user.email": "tanimoucisse@gmail.com",
++                        "user.name": "cissetanimou"
++                    }
++                ],
++                "gitlens.views.repositories.includeWorkingTree": true,
++                "gitlens.views.contributors.showAllBranches": true,
++                "editor.codeActionsOnSave": {
++                    "source.organizeImports": true
++                },
++                "typescript.format.insertSpaceAfterConstructor": true,
++                "typescript.implementationsCodeLens.enabled": true,
++                "typescript.referencesCodeLens.enabled": true,
++                "workbench.colorCustomizations": {
++                    "bookmarks.lineBackground": "#157EFB22",
++                    "editor.lineHighlightBackground": "#1073cf2d",
++                    "editor.lineHighlightBorder": "#9fced11f"
++                },
++                "bookmarks.saveBookmarksInProject": true,
++                "terminal.integrated.copyOnSelection": true,
++                "terminal.integrated.cursorBlinking": true,
++                "terminal.integrated.defaultProfile.windows": "Command Prompt",
++                "codestream.email": "tanimou@live.fr",
++                "[javascript]": {
++                    "editor.defaultFormatter": "vscode.typescript-language-features"
++                },
++                "bookmarks.useWorkaroundForFormatters": true,
++                "livePreview.notifyOnOpenLooseFile": false,
++                "livePreview.debugOnExternalPreview": true,
++                "livePreview.serverKeepAliveAfterEmbeddedPreviewClose": 1,
++                "diffEditor.ignoreTrimWhitespace": false,
++                "explorer.confirmDragAndDrop": false,
++                "redhat.telemetry.enabled": true,
++                "highlight-matching-tag.showPath": false,
++                "highlight-matching-tag.highlightFromAttributes": false,
++                "highlight-matching-tag.enabled": false,
++                "highlight-matching-tag.highlightFromName": false,
++                "highlight-matching-tag.showRuler": false,
++                "quokka.automaticRestart": true,
++                "sourcery.token": "user_2z9RsYt32di8FWTyyfT5lE5y51YDU_SX_Mzq0ZU_B67t_KPrHxrjhq_vm8g",
++                "AREPL.skipLandingPage": true,
++                "AREPL.printResultPlacement": "bottom",
++                "AREPL.keepPreviousVars": true,
++                "AREPL.delay": 100,
++                "AREPL.unsafeKeywords": [],
++                "window.autoDetectColorScheme": true,
++                "quokka.startViewStatusBar": false,
++                "comment-divider.shouldLengthIncludeIndent": true,
++                "comment-divider.languagesMap": {
++                    "python": [
++                        "#",
++                        "#"
++                    ],
++                    "scss": [
++                        "//"
++                    ]
++                },
++                "terminal.integrated.environmentChangesIndicator": "on",
++                "terminal.integrated.enableBell": true,
++                "terminal.integrated.cursorStyle": "line",
++                "terminal.integrated.bellDuration": 5000,
++                "code-runner.fileDirectoryAsCwd": true,
++                "code-runner.runInTerminal": true,
++                "workbench.iconTheme": "material-icon-theme",
++                "remoteHub.commitDirectlyWarning": "off",
++                "notebook.lineNumbers": "on",
++                "notebook.consolidatedRunButton": true,
++                "notebook.cellToolbarLocation": {
++                    "default": "right",
++                    "jupyter-notebook": "right",
++                    "sql-notebook": "left"
++                },
++                "surround.custom": {
++                    // command name must be unique
++                    "block-endblock": {
++                        // label must be unique
++                        "label": "{%block content%}{%endblock%}",
++                        "description": "Your Snippet Description",
++                        "snippet": "{%block content%}  $TM_SELECTED_TEXT {%endblock%}", // <-- snippet goes here.
++                        "languageIds": [
++                            "django-html"
++                        ]
++                    },
++                    // You can add more ...
++                    "comment-html": {
++                        // label must be unique
++                        "label": "html comment",
++                        "description": "Your Snippet Description",
++                        "snippet": "<!-- $TM_SELECTED_TEXT -->", // <-- snippet goes here.
++                        "languageIds": [
++                            "django-html",
++                            "html"
++                        ]
++                    },
++                    "comment-python": {
++                        // label must be unique
++                        "label": "python comment",
++                        "description": "Your Snippet Description",
++                        "snippet": "'''\n$TM_SELECTED_TEXT\n''' ", // <-- snippet goes here.
++                        "languageIds": [
++                            "python"
++                        ]
++                    }
++                },
++                "projectManager.git.baseFolders": [
++                    "D:\\tanimou\\Programmation projects\\Git Projects"
++                ],
++                "workbench.editorAssociations": {
++                    "*.jpg": "cweijan.officeViewer",
++                    "git-rebase-todo": "gitlens.rebase",
++                    "*.png": "cweijan.officeViewer",
++                    "*.xlsx": "cweijan.officeViewer",
++                    "*.pdf": "analyticsignal.preview-pdf",
++                    "*.csv": "default",
++                    "*.ico": "cweijan.officeViewer",
++                    "*.svg": "gryc.viewer"
++                },
++                "workbench.editor.scrollToSwitchTabs": true,
++                "workbench.editor.highlightModifiedTabs": true,
++                "gitlens.gitCommands.skipConfirmations": [
++                    "fetch:command",
++                    "stash-push:command",
++                    "switch:command",
++                    "push:command"
++                ],
++                "search.actionsPosition": "auto",
++                "gitblame.statusBarMessageDisplayRight": true,
++                "todohighlight.isCaseSensitive": true,
++                "todohighlight.keywords": [
++                    "DEBUG:",
++                    "REVIEW:",
++                    {
++                        "text": "NOTE:",
++                        "color": "white",
++                        "backgroundColor": "green",
++                        "overviewRulerColor": "grey",
++                        "borderRadius": "4px",
++                        "border": "1px solid white"
++                    },
++                    {
++                        "text": "TODO:",
++                        "color": "white",
++                        "overviewRulerColor": "grey",
++                        "backgroundColor": "#ffab00",
++                        "border": "1px solid white",
++                        "borderRadius": "4px" //NOTE: using borderRadius along with `border` or you will see nothing change
++                        //other styling properties goes here ...
++                    }
++                ],
++                // "todohighlight.keywordsPattern": "TODO:|FIXME:|\\(([^)]+)\\)", //highlight `TODO:`,`FIXME:` or content between parentheses
++                "todohighlight.defaultStyle": {
++                    "color": "red",
++                    "backgroundColor": "#ffab00",
++                    "overviewRulerColor": "#ffab00",
++                    "cursor": "pointer",
++                    "border": "1px solid #eee",
++                    "borderRadius": "4px",
++                    "isWholeLine": false
++                    //other styling properties goes here ...
++                },
++                "todohighlight.include": [
++                    "**/*.js",
++                    "**/*.jsx",
++                    "**/*.ts",
++                    "**/*.tsx",
++                    "**/*.html",
++                    "**/*.php",
++                    "**/*.css",
++                    "**/*.scss",
++                    "**/*.py"
++                ],
++                "todohighlight.exclude": [
++                    "**/node_modules/**",
++                    "**/bower_components/**",
++                    "**/dist/**",
++                    "**/build/**",
++                    "**/.vscode/**",
++                    "**/.github/**",
++                    "**/_output/**",
++                    "**/*.min.*",
++                    "**/*.map",
++                    "**/.next/**"
++                ],
++                "todohighlight.maxFilesForSearch": 5120,
++                "todohighlight.toggleURI": false,
++                "files.defaultLanguage": "${activeEditorLanguage}",
++                "editor.cursorBlinking": "smooth",
++                "editor.cursorSmoothCaretAnimation": "on",
++                "pythonPreview.trace": "verbose",
++                "bracket-pair-colorizer-2.depreciation-notice": false,
++                "git.alwaysShowStagedChangesResourceGroup": true,
++                "git.showPushSuccessNotification": true,
++                "gitlens.hovers.currentLine.over": "line",
++                "gitlens.codeLens.scopes": [
++                    "document",
++                    "containers",
++                    "blocks"
++                ],
++                "gitlens.views.repositories.showIncomingActivity": true,
++                "mssql.applyLocalization": true,
++                "gitdoc.autoPush": "off",
++                "gitdoc.autoPull": "off",
++                "gitdoc.commitOnClose": false,
++                "[sql]": {
++                    "editor.defaultFormatter": "mtxr.sqltools"
++                },
++                "Prettier-SQL.openParenNewline": true,
++                "Prettier-SQL.semicolonNewline": true,
++                "Prettier-SQL.tabulateAlias": true,
++                "oracledevtools.bookmarkFileFolder": "C:\\Users\\tanim\\Oracle\\oracle.oracledevtools",
++                "oracledevtools.connectionConfiguration.configFilesFolder": "C:\\Users\\tanim\\Oracle\\network\\admin",
++                "oracledevtools.download.otherFolder": "C:\\Users\\tanim\\downloads",
++                "oracledevtools.connectionConfiguration.walletFileFolder": "C:\\Users\\tanim\\Oracle\\network\\admin",
++                "workbench.editor.historyBasedLanguageDetection": true,
++                "liveshare.audio.startCallOnShare": true,
++                "errorLens.enabled": true,
++                "jupyter.widgetScriptSources": [
++                    "jsdelivr.com",
++                    "unpkg.com"
++                ],
++                "editor.guides.bracketPairs": false,
++                "githubNotificationsBell.refreshInterval": 300, // Amount of seconds to wait before each refresh
++                "githubNotificationsBell.oauthToken": "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", // OAuth token used for requesting the notifications
++                "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
++                "githubNotificationsBell.icon": "mark-github", // The icon to use in the statusbar
++                "githubNotificationsBell.color": "red", // Bell's color when there are some notifications
++                "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
++                "githubNotificationsBell.showNumberOfNotifications": true, // Show the number of notifications alongside the bell icon
++                "githubNotificationsBell.domain": "github.com",
++                "[jsonc]": {
++                    "editor.defaultFormatter": "vscode.json-language-features"
++                },
++                "mssql.connections": [
++                    {
++                        "server": "TANIMOUCISSE",
++                        "database": "AdventureWorks",
++                        "authenticationType": "Integrated",
++                        "profileName": "AdventureWorks",
++                        "password": ""
++                    },
++                    {
++                        "server": "TANIMOUCISSE",
++                        "database": "AdventureWorksDW",
++                        "authenticationType": "Integrated",
++                        "profileName": "AdventureWorksDW",
++                        "password": ""
++                    }
++                ],
++                "editor.inlineSuggest.enabled": true,
++                "github.copilot.enable": {
++                    "*": true,
++                    "yaml": false,
++                    "plaintext": false,
++                    "markdown": false,
++                    "python": true,
++                    "javascript": true,
++                    "docker": true,
++                    "sql": true,
++                    "jsonc": true
++                },
++                // The delay in ms until the editor gets updated.
++                "indentRainbow.updateDelay": 50, // 10 makes it super fast but may cost more resources,
++                // The indent color if the number of spaces is not a multiple of "tabSize".
++                "indentRainbow.errorColor": "rgba(128,32,32,0.6)",
++                // The indent color when there is a mix between spaces and tabs.
++                // To be disabled this coloring set this to an empty string.
++                "indentRainbow.tabmixColor": "rgba(128,32,96,0.6)",
++                // Using the light mode
++                "indentRainbow.indicatorStyle": "light",
++                // we use a simple 1 pixel wide line
++                "indentRainbow.lightIndicatorStyleLineWidth": 2,
++                // the same colors as above but more visible
++                "indentRainbow.colors": [
++                    "rgba(255,255,64,0.3)",
++                    "rgba(127,255,127,0.3)",
++                    "rgba(255,127,255,0.3)",
++                    "rgba(79,236,236,0.3)"
++                ],
++                "editor.suggest.preview": true,
++                "workbench.editor.enablePreviewFromCodeNavigation": true,
++                "workbench.editor.enablePreviewFromQuickOpen": true,
++                "workbench.editor.sharedViewState": true,
++                "workbench.editor.revealIfOpen": true,
++                "workbench.editor.limit.enabled": true,
++                "explorer.fileNesting.enabled": true,
++                "explorer.incrementalNaming": "smart",
++                "explorer.openEditors.visible": 10,
++                "search.quickOpen.includeSymbols": true,
++                "scm.alwaysShowRepositories": true,
++                "editor.formatOnSaveMode": "modificationsIfAvailable",
++                "editor.formatOnType": true,
++                "extensions.experimental.useUtilityProcess": true,
++                "git.ignoreRebaseWarning": true,
++                "liveshare.presence": false,
++                "blockman.n01LineHeight": 0,
++                "editor.wordWrap": "off",
++                "diffEditor.wordWrap": "off",
++                "editor.inlayHints.enabled": "on",
++                "blockman.n23AnalyzeSquareBrackets": true,
++                "blockman.n24AnalyzeRoundBrackets": true,
++                "editor.guides.indentation": false,
++                "blockman.n04Sub01ColorComboPresetForDarkTheme": "Classic Dark 2 (Gradients)",
++                "blockman.n04ColorComboPreset": "Sapphire (Gradients)",
++                "blockman.n33A03B1FromDepth0ToInwardForFocusTreeBorders": "30,1,0,2; neutral > linear-gradient(to right, rgb(144, 54, 8), rgb(48, 36, 116))",
++                "blockman.n04Sub05MinDistanceBetweenRightSideEdges": 4,
++                "blockman.n04Sub06AdditionalPaddingRight": 4,
++                "blockman.n21BorderRadius": 5,
++                "blockman.n28TimeToWaitBeforeRerenderAfterLastChangeEvent": 1,
++                "git.mergeEditor": true,
++                "git.terminalGitEditor": true,
++                "errorLens.enableOnDiffView": true,
++                "window.commandCenter": true,
++                "gitMerger.customCommitMessage": true,
++                "git.postCommitCommand": "sync",
++                "git.enableSmartCommit": true,
++                "gitlens.advanced.repositorySearchDepth": 2,
++                "git.fetchOnPull": true,
++                "git.supportCancellation": true,
++                "git.timeline.showUncommitted": true,
++                "[cpp]": {
++                    "editor.defaultFormatter": "ms-vscode.cpptools"
++                },
++                "[c]": {
++                    "editor.defaultFormatter": "ms-vscode.cpptools"
++                },
++                "markdown.extension.preview.autoShowPreviewToSide": true,
++                "notebook.globalToolbarShowLabel": "never",
++                "rapidapi.terminalLink.enabled": true,
++                "terminal.integrated.shellIntegration.decorationIconSuccess": "lightbulb",
++                "terminal.integrated.shellIntegration.decorationIcon": "person",
++                "terminal.integrated.shellIntegration.decorationIconError": "debug-breakpoint",
++                "projects.defaultProjectSaveLocation": "D:\\tanimou\\Programmation projects\\Tutorials",
++                "projectManager.removeCurrentProjectFromList": false,
++                "quokka.compactMessageOutput": true,
++                "rapidapi.requests.sendRequestBody": true,
++                "vsicons.dontShowNewVersionMessage": true,
++                "editor.foldingMaximumRegions": 10000,
++                "javascript.updateImportsOnFileMove.enabled": "always",
++                "terminal.integrated.smoothScrolling": true,
++                "editor.experimental.pasteActions.enabled": true,
++                "mergeEditor.diffAlgorithm": "experimental",
++                "ipynb.experimental.pasteImages.enabled": true,
++                "workbench.experimental.settingsProfiles.enabled": true,
++                "workbench.experimental.editSessions.enabled": true,
++                "editor.stickyScroll.enabled": true,
++                "editor.suggest.matchOnWordStartOnly": false,
++                "codestream.serverUrl": "https://codestream-us1.service.newrelic.com",
++                "helium-icon-theme.showWelcomeMessage": false,
++                "gitlens.codeLens.includeSingleLineSymbols": true,
++                "projectManager.filterOnFullPath": true,
++                "projectManager.groupList": true,
++                "projectManager.showParentFolderInfoOnDuplicates": true,
++                "projectManager.vscode.baseFolders": [
++                    "D:\\tanimou\\Programmation projects\\Tutorials"
++                ],
++                "editor.stickyTabStops": true,
++                "java.configuration.runtimes": [
++                    {
++                        "name": "JavaSE-17",
++                        "path": "D:\\Program Files\\Java\\jdk-17",
++                        "default": true
++                    }
++                ],
++                "java.jdt.ls.java.home": "D:\\Program Files\\Java\\jdk-17",
++                "markdown.validate.enabled": true,
++                "git.pullBeforeCheckout": true,
++                "git.confirmSync": false,
++                "footsteps.highlightColorMaxOpacity": 0.2,
++                "footsteps.doHighlightCurrentlyFocusedChunk": true,
++                "githubPullRequests.assignCreated": "${user}",
++                "githubPullRequests.notifications": "pullRequests",
++                "terminal.integrated.allowMnemonics": true,
++                "terminal.integrated.defaultProfile.linux": "C:\\Users\\tanimou\\AppData\\Local\\Microsoft\\WindowsApps\\ubuntu.exe",
++                "terminal.integrated.profiles.windows": {
++                    "Git bash": {
++                        "path": "D:\\Program Files\\Git\\bin\\bash.exe"
++                    }
++                },
++                "sqltools.useNodeRuntime": false,
++                "sqltools.detectNodeRuntime": false,
++                "footsteps.doHighlightChanges": false,
++                "editor.fontLigatures": true,
++                "material-icon-theme.hidesExplorerArrows": true,
++                "sqltools.autoOpenSessionFiles": true,
++                "terminal.integrated.enablePersistentSessions": false,
++                "typescript.updateImportsOnFileMove.enabled": "always",
++                "workbench.productIconTheme": "fluent-icons",
++                "Codegeex.Privacy": true,
++                "template-string-converter.autoRemoveTemplateString": true,
++                "template-string-converter.validLanguages": [
++                    "svelte",
++                    "typescript",
++                    "javascript",
++                    "typescriptreact",
++                    "javascriptreact"
++                ],
++                "sqltools.disableNodeDetectNotifications": true,
++                "terminal.integrated.tabFocusMode": false
++                // The Github domain to query against. Github Enterprise may use a different domain
++            },
++            "postCreateCommand": "git config --global commit.gpgsign false"
++        }
++    }
++}
+diff --git a/package-lock.json b/package-lock.json
+index 4889302..4359ad0 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -17,6 +17,7 @@
+         "react": "^18.2.0",
+         "react-dom": "18.2.0",
+         "saas": "^1.0.0",
++        "sass": "^1.62.1",
+         "typescript": "4.9.4"
+       }
+     },
+@@ -557,6 +558,18 @@
+         "url": "https://github.com/chalk/ansi-styles?sponsor=1"
+       }
+     },
++    "node_modules/anymatch": {
++      "version": "3.1.3",
++      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
++      "integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
++      "dependencies": {
++        "normalize-path": "^3.0.0",
++        "picomatch": "^2.0.4"
++      },
++      "engines": {
++        "node": ">= 8"
++      }
++    },
+     "node_modules/argparse": {
+       "version": "2.0.1",
+       "resolved": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
+@@ -669,6 +682,14 @@
+       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
+       "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
+     },
++    "node_modules/binary-extensions": {
++      "version": "2.2.0",
++      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
++      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==",
++      "engines": {
++        "node": ">=8"
++      }
++    },
+     "node_modules/brace-expansion": {
+       "version": "1.1.11",
+       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+@@ -739,6 +760,43 @@
+         "url": "https://github.com/chalk/chalk?sponsor=1"
+       }
+     },
++    "node_modules/chokidar": {
++      "version": "3.5.3",
++      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz",
++      "integrity": "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==",
++      "funding": [
++        {
++          "type": "individual",
++          "url": "https://paulmillr.com/funding/"
++        }
++      ],
++      "dependencies": {
++        "anymatch": "~3.1.2",
++        "braces": "~3.0.2",
++        "glob-parent": "~5.1.2",
++        "is-binary-path": "~2.1.0",
++        "is-glob": "~4.0.1",
++        "normalize-path": "~3.0.0",
++        "readdirp": "~3.6.0"
++      },
++      "engines": {
++        "node": ">= 8.10.0"
++      },
++      "optionalDependencies": {
++        "fsevents": "~2.3.2"
++      }
++    },
++    "node_modules/chokidar/node_modules/glob-parent": {
++      "version": "5.1.2",
++      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
++      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
++      "dependencies": {
++        "is-glob": "^4.0.1"
++      },
++      "engines": {
++        "node": ">= 6"
++      }
++    },
+     "node_modules/client-only": {
+       "version": "0.0.1",
+       "resolved": "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz",
+@@ -1493,6 +1551,19 @@
+       "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
+       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
+     },
++    "node_modules/fsevents": {
++      "version": "2.3.2",
++      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
++      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
++      "hasInstallScript": true,
++      "optional": true,
++      "os": [
++        "darwin"
++      ],
++      "engines": {
++        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
++      }
++    },
+     "node_modules/function-bind": {
+       "version": "1.1.1",
+       "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz",
+@@ -1724,6 +1795,11 @@
+         "node": ">= 4"
+       }
+     },
++    "node_modules/immutable": {
++      "version": "4.3.0",
++      "resolved": "https://registry.npmjs.org/immutable/-/immutable-4.3.0.tgz",
++      "integrity": "sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg=="
++    },
+     "node_modules/import-fresh": {
+       "version": "3.3.0",
+       "resolved": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz",
+@@ -1785,6 +1861,17 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
++    "node_modules/is-binary-path": {
++      "version": "2.1.0",
++      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
++      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
++      "dependencies": {
++        "binary-extensions": "^2.0.0"
++      },
++      "engines": {
++        "node": ">=8"
++      }
++    },
+     "node_modules/is-boolean-object": {
+       "version": "1.1.2",
+       "resolved": "https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.1.2.tgz",
+@@ -2226,6 +2313,14 @@
+         }
+       }
+     },
++    "node_modules/normalize-path": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
++      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
++      "engines": {
++        "node": ">=0.10.0"
++      }
++    },
+     "node_modules/object-assign": {
+       "version": "4.1.1",
+       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+@@ -2552,6 +2647,17 @@
+       "resolved": "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz",
+       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
+     },
++    "node_modules/readdirp": {
++      "version": "3.6.0",
++      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
++      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
++      "dependencies": {
++        "picomatch": "^2.2.1"
++      },
++      "engines": {
++        "node": ">=8.10.0"
++      }
++    },
+     "node_modules/regenerator-runtime": {
+       "version": "0.13.11",
+       "resolved": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz",
+@@ -2671,6 +2777,22 @@
+         "url": "https://github.com/sponsors/ljharb"
+       }
+     },
++    "node_modules/sass": {
++      "version": "1.62.1",
++      "resolved": "https://registry.npmjs.org/sass/-/sass-1.62.1.tgz",
++      "integrity": "sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==",
++      "dependencies": {
++        "chokidar": ">=3.0.0 <4.0.0",
++        "immutable": "^4.0.0",
++        "source-map-js": ">=0.6.2 <2.0.0"
++      },
++      "bin": {
++        "sass": "sass.js"
++      },
++      "engines": {
++        "node": ">=14.0.0"
++      }
++    },
+     "node_modules/scheduler": {
+       "version": "0.23.0",
+       "resolved": "https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz",
+@@ -3372,6 +3494,15 @@
+         "color-convert": "^2.0.1"
+       }
+     },
++    "anymatch": {
++      "version": "3.1.3",
++      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
++      "integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
++      "requires": {
++        "normalize-path": "^3.0.0",
++        "picomatch": "^2.0.4"
++      }
++    },
+     "argparse": {
+       "version": "2.0.1",
+       "resolved": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
+@@ -3457,6 +3588,11 @@
+       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
+       "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
+     },
++    "binary-extensions": {
++      "version": "2.2.0",
++      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
++      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA=="
++    },
+     "brace-expansion": {
+       "version": "1.1.11",
+       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+@@ -3502,6 +3638,31 @@
+         "supports-color": "^7.1.0"
+       }
+     },
++    "chokidar": {
++      "version": "3.5.3",
++      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz",
++      "integrity": "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==",
++      "requires": {
++        "anymatch": "~3.1.2",
++        "braces": "~3.0.2",
++        "fsevents": "~2.3.2",
++        "glob-parent": "~5.1.2",
++        "is-binary-path": "~2.1.0",
++        "is-glob": "~4.0.1",
++        "normalize-path": "~3.0.0",
++        "readdirp": "~3.6.0"
++      },
++      "dependencies": {
++        "glob-parent": {
++          "version": "5.1.2",
++          "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
++          "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
++          "requires": {
++            "is-glob": "^4.0.1"
++          }
++        }
++      }
++    },
+     "client-only": {
+       "version": "0.0.1",
+       "resolved": "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz",
+@@ -4071,6 +4232,12 @@
+       "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
+       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
+     },
++    "fsevents": {
++      "version": "2.3.2",
++      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
++      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
++      "optional": true
++    },
+     "function-bind": {
+       "version": "1.1.1",
+       "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz",
+@@ -4230,6 +4397,11 @@
+       "resolved": "https://registry.npmjs.org/ignore/-/ignore-5.2.1.tgz",
+       "integrity": "sha512-d2qQLzTJ9WxQftPAuEQpSPmKqzxePjzVbpAVv62AQ64NTL+wR4JkrVqR/LqFsFEUsHDAiId52mJteHDFuDkElA=="
+     },
++    "immutable": {
++      "version": "4.3.0",
++      "resolved": "https://registry.npmjs.org/immutable/-/immutable-4.3.0.tgz",
++      "integrity": "sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg=="
++    },
+     "import-fresh": {
+       "version": "3.3.0",
+       "resolved": "https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz",
+@@ -4276,6 +4448,14 @@
+         "has-bigints": "^1.0.1"
+       }
+     },
++    "is-binary-path": {
++      "version": "2.1.0",
++      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
++      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
++      "requires": {
++        "binary-extensions": "^2.0.0"
++      }
++    },
+     "is-boolean-object": {
+       "version": "1.1.2",
+       "resolved": "https://registry.npmjs.org/is-boolean-object/-/is-boolean-object-1.1.2.tgz",
+@@ -4564,6 +4744,11 @@
+         "styled-jsx": "5.1.0"
+       }
+     },
++    "normalize-path": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
++      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
++    },
+     "object-assign": {
+       "version": "4.1.1",
+       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+@@ -4776,6 +4961,14 @@
+       "resolved": "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz",
+       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
+     },
++    "readdirp": {
++      "version": "3.6.0",
++      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
++      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
++      "requires": {
++        "picomatch": "^2.2.1"
++      }
++    },
+     "regenerator-runtime": {
+       "version": "0.13.11",
+       "resolved": "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz",
+@@ -4847,6 +5040,16 @@
+         "is-regex": "^1.1.4"
+       }
+     },
++    "sass": {
++      "version": "1.62.1",
++      "resolved": "https://registry.npmjs.org/sass/-/sass-1.62.1.tgz",
++      "integrity": "sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==",
++      "requires": {
++        "chokidar": ">=3.0.0 <4.0.0",
++        "immutable": "^4.0.0",
++        "source-map-js": ">=0.6.2 <2.0.0"
++      }
++    },
+     "scheduler": {
+       "version": "0.23.0",
+       "resolved": "https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz",
+diff --git a/package.json b/package.json
+index 6efecfd..f0ca460 100644
+--- a/package.json
++++ b/package.json
+@@ -18,6 +18,7 @@
+     "react": "^18.2.0",
+     "react-dom": "18.2.0",
+     "saas": "^1.0.0",
++    "sass": "^1.62.1",
+     "typescript": "4.9.4"
+   }
+ }
+diff --git a/pages/_app.tsx b/pages/_app.tsx
+index e046d7f..9214291 100644
+--- a/pages/_app.tsx
++++ b/pages/_app.tsx
+@@ -1,4 +1,5 @@
+ import "../styles/globals.css";
++// import "../styles/general.sass";
+ import type { AppProps } from "next/app";
+ import MainLayout from '../src/components/layout/main-layout'
+ export default function App({ Component, pageProps }: AppProps) {
+diff --git a/pages/events/[cat]/[id].js b/pages/events/[cat]/[id].js
+index aa3bd97..8c01135 100644
+--- a/pages/events/[cat]/[id].js
++++ b/pages/events/[cat]/[id].js
+@@ -7,7 +7,7 @@ export default function singleeventpage({data}) {
+       <div>
+         {/* create 3 div */}
+       
+-            <Image width={1000} height={'500'} alt={data.title} src={data.image} />
++            <Image width={1000} height={500} alt={data.title} src={data.image} />
+             <h2>{data.title}</h2>
+             <p>{data.description}</p>
+       </div>
+diff --git a/pages/events/[cat]/index.js b/pages/events/[cat]/index.js
+index 5fc4778..d8b9818 100644
+--- a/pages/events/[cat]/index.js
++++ b/pages/events/[cat]/index.js
+@@ -1,25 +1,10 @@
+ import Image from 'next/image'
++import CatEvent from 'src/components/events/CatEvent'
+ // import Link
+ import Link from 'next/link'
+-export default function eventcatpage({ data,pageName }) {
+-  return (
+-    <div>
+-      <h1>Events in { pageName}</h1>
+-      <div>
+-        {data.map((cat) => (
+-          <Link key={cat.id} href={`/events/${cat.city}/${cat.id}`} passHref>
+-              
+-        
+-          <Image width={200} height={'100'} alt={cat.title} src={cat.image} />
+-          <h2>{cat.title}</h2>
+-          <p>{cat.description}</p>
+-            
+-          </Link>
+-      ))}
+-</div>
+-    </div>
+-  );
+-}
++const eventcatpage = ({ data, pageName }) => <CatEvent data={data} pageName={ pageName} />
++
++export default eventcatpage
+ 
+ export async function getStaticPaths() {
+   const { events_categories } = await import('data/data.json');
+diff --git a/pages/events/index.js b/pages/events/index.js
+index 4f557f8..5d5f14f 100644
+--- a/pages/events/index.js
++++ b/pages/events/index.js
+@@ -1,27 +1,10 @@
+ import Image from 'next/image'
+ import Link from 'next/link'
++import EventsPage from 'src/components/events/events-page'
+ 
+ export default function event1({ data }) {
+-  return (
+-    <div>
+-      <h1>Events Page</h1>
+-      <div>
+-        {/* create 3 div */}
+-        {data.map((cat) => (
+-          <Link key={cat.id } href={`/events/${cat.id}`} passHref>
+-            
+-            <Image width={200} height={'100'} alt={cat.title} src={cat.image} />
+-            <h2>{cat.title}</h2>
+-            <p>{cat.description}</p>
+-          
+-          </Link>
+-        
+-
+-        ))}
+-    
+-      </div>
+-    </div>
+-  );
++  return <EventsPage data={data} />
++  
+ }
+ 
+ 
+diff --git a/pages/index.js b/pages/index.js
+index 24ac7a7..152c5ed 100644
+--- a/pages/index.js
++++ b/pages/index.js
+@@ -1,11 +1,12 @@
+ import Head from 'next/head'
++// import "../styles/general.sass";
+ import styles from '../styles/Home.module.css'
+ import { HomePage } from "../src/components/home/home-page"
+ 
+ 
+ export default function Home({ data }) {
+   return (
+-    <div className={styles.container}>
++    <div>
+       <Head>
+         <title>{data.title}</title>
+         <meta name="description" content="Generated by create next app" />
+diff --git a/src/components/events/CatEvent.jsx b/src/components/events/CatEvent.jsx
+new file mode 100644
+index 0000000..f401d26
+--- /dev/null
++++ b/src/components/events/CatEvent.jsx
+@@ -0,0 +1,25 @@
++import React from 'react'
++import Image from 'next/image'
++import Link from 'next/link'
++
++const CatEvent = ({data,pageName}) => {
++  return (
++      <div className='cat_events'>
++          <h1>Events in {pageName}</h1>
++          <div className='content'>
++              {data.map((cat) => (
++                  <Link className="card" key={cat.id} href={`/events/${cat.city}/${cat.id}`} passHref>
++
++
++                      <Image width={200} height={100} alt={cat.title} src={cat.image} />
++                      <h2>{cat.title}</h2>
++                      <p>{cat.description}</p>
++
++                  </Link>
++              ))}
++          </div>
++      </div>
++  )
++}
++
++export default CatEvent
+diff --git a/src/components/events/eventCard.jsx b/src/components/events/eventCard.jsx
+new file mode 100644
+index 0000000..e69de29
+diff --git a/src/components/events/events-page.jsx b/src/components/events/events-page.jsx
+index e69de29..ce0ebba 100644
+--- a/src/components/events/events-page.jsx
++++ b/src/components/events/events-page.jsx
+@@ -0,0 +1,25 @@
++import React from 'react'
++import Image from 'next/image'
++import Link from 'next/link'
++
++const EventsPage = ({data}) => {
++return (
++<div className='events'>
++    {/* <h1>Events Page</h1> */}
++
++    {/* create 3 div */}
++    {data.map((cat) => (
++    <Link className='card' key={cat.id} href={`/events/${cat.id}`} passHref>
++    
++        <Image width={300} height={300} alt={cat.title} src={cat.image} />
++        <h2>{cat.title}</h2>
++        {/* <p>{cat.description}</p> */}
++    
++
++    </Link>
++    ))}
++</div>
++)
++}
++
++export default EventsPage
+\ No newline at end of file
+diff --git a/src/components/header/header.jsx b/src/components/header/header.jsx
+index c1d235a..b645a67 100644
+--- a/src/components/header/header.jsx
++++ b/src/components/header/header.jsx
+@@ -1,18 +1,32 @@
+ import Link from "next/link";
++import Image from 'next/image'
+ 
+ import styles from "../../../styles/Home.module.css";
+-export const Header = () => (
+-
+-    < header className={styles.header} >
+-
+-        < nav className={styles.nav} >
+ 
+-            <Link Link href="/" > Home</Link>
+-
+-            <Link href="/about">About</Link>
++export const Header = () => (
+ 
+-            <Link href="/events">Events</Link>
++< header className={styles.header}>
++    {/* add a div block */}
++    
++        <div className="topNav">
++            {/* import an image tag with width 50 and height 50 */}
++            <Image src="/favicon.ico" width={50} height={50} alt="logo" />
++            <nav className={styles.nav}>
++                {/* add a ul tag and 3 li tag in it */}
++                <ul>
++                    <li>
++                        <Link href="/"> Home</Link>
++                    </li>
++                    <li>
++                        <Link href="/about">About</Link>
++                    </li>
++                    <li>
++                        <Link href="/events">Events</Link>
++                    </li>
++                </ul>
++            </nav>
++        </div>
+ 
+-        </nav >
+-    </header >
+-)
+\ No newline at end of file
++    
++    </header>
++    )
+\ No newline at end of file
+diff --git a/src/components/home/home-page.jsx b/src/components/home/home-page.jsx
+index 29bcfb1..e78d040 100644
+--- a/src/components/home/home-page.jsx
++++ b/src/components/home/home-page.jsx
+@@ -4,16 +4,21 @@ import styles from "../../../styles/Home.module.css";
+ 
+ export const HomePage = ({ data })=>  {
+     return (
+-        <main className={styles.main}>
++        <div className="home_body">
+             {/* create 3 div */}
+ 
+             {data?.map((cat) => (
+-                <Link key={cat.id} href={`/events/${cat.id}`} passHref>
+-                    <Image width={200} height={"100"} alt={cat.title} src={cat.image} />
+-                    <h2>{cat.title}</h2>
++                <Link className="card" key={cat.id} href={`/events/${cat.id}`} passHref>
++                    <div  className="image"  >
++                        <Image width={600} height={400} alt={cat.title} src={cat.image} />
++                    </div>
++                    <div className="content">
++                        <h2>{cat.title}</h2>
+                     <p>{cat.description}</p>
++                    </div>
++                    
+                 </Link>
+             ))}
+-        </main>
++        </div>
+     );
+ };
+diff --git a/src/components/layout/main-layout.jsx b/src/components/layout/main-layout.jsx
+index d90d984..3a50803 100644
+--- a/src/components/layout/main-layout.jsx
++++ b/src/components/layout/main-layout.jsx
+@@ -5,10 +5,13 @@ import {Footer} from '../footer/footer'
+     return (
+         <>
+             <Header />
++            <main>
++                    {children}
++            </main>
+ {/* we are destructuring the props to get children parameter
+     That means we can put everything we want between the header and the footer
+     And we are going to call this component in our _app.tsx folder that the main component */}
+-            {children}
++        
+ 
+             <Footer />
+         </>
+diff --git a/styles/general.sass b/styles/general.sass
+new file mode 100644
+index 0000000..588c6b2
+--- /dev/null
++++ b/styles/general.sass
+@@ -0,0 +1,5 @@
++header
++    height:300px
++    .topNav
++        display:flex
++        justify-content:space-between
+diff --git a/styles/globals.css b/styles/globals.css
+index 4f18421..7e5b6bd 100644
+--- a/styles/globals.css
++++ b/styles/globals.css
+@@ -5,12 +5,41 @@ body {
+   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+ }
+-
++header {
++  height:100px;
++  padding:10px;
++  background:linear-gradient(300deg, #a5e2a3, #63a1d3,transparent);
++  display: flex;
++  flex-direction: column;
++  justify-content: space-between;
++}
+ a {
+   color: inherit;
+   text-decoration: none;
+ }
+ 
++.topNav {
++        display:flex;
++        justify-content:space-between;
++        align-content:center
++}
++ul {
++  display: flex;
++  justify-content: space-between;
++  align-items: center;
++  list-style: none;
++  gap:15px
++}
++li{
++  padding:10px;
++  border:1px solid black;
++  border-radius:5px;
++  cursor:pointer;
++}
++li:hover{
++  background-color:rgb(105, 236, 212);
++  color:white;
++}
+ * {
+   box-sizing: border-box;
+ }
+@@ -20,7 +49,85 @@ a {
+     color-scheme: dark;
+   }
+   body {
+-    color: white;
+-    background: black;
++    color: black;
++    background: white;
+   }
+ }
++
++footer{
++  height:100px;
++  padding:10px;
++  color:white;
++  background-color: black;
++  display: flex;
++  flex-direction: column;
++  justify-content: space-between;
++}
++main {
++  width: 1000px;
++  margin: 200px;
++  max-width: 1250px;
++  padding: -50px 30px;
++  min-height: 500px;
++
++}
++.home_body{
++    gap: 30px;
++    display: flex;
++    flex-direction: column;
++    justify-content: space-between;
++    align-items: center;
++    align-content: flex-end;
++    flex-wrap: wrap;
++
++}
++
++.home_body,
++.card{
++  display: flex;
++    flex-direction: row-reverse;
++    gap: 50px;
++    justify-content: center;
++    align-content: flex-start;
++    align-items: center;
++    &:nth-child(even){
++  direction: rtl;
++}
++    flex-wrap: wrap;
++}
++.home_body,
++.content{
++  width: 50%;
++}
++.home_body,
++.image{
++  width: 40%;
++}
++.events{
++  display: flex;
++  flex-direction: row;
++  gap:20px
++}
++.events .card{
++  position: relative;
++}
++.events .card h2{
++  position: absolute;
++  top:50%;
++  width: 100%;
++  text-align: center;
++  font-size: 38px;
++  color: white;
++  text-transform: uppercase;
++  text-shadow: 1px 1px 20px black;
++}
++.cat_events .content{
++    display: flex;
++  flex-direction: column;
++  flex-wrap:wrap;
++}
++.cat_events .card{
++  display: flex;
++  flex-direction: row;
++  gap:30px
++}
+\ No newline at end of file
+diff --git a/test.txt b/test.txt
+new file mode 100644
+index 0000000..2c1afde
+--- /dev/null
++++ b/test.txt
+@@ -0,0 +1 @@
++echo "This is a test message" > test.txt
+\ No newline at end of file
+diff --git a/test.txt.gpg b/test.txt.gpg
+new file mode 100644
+index 0000000..fca9c64
+Binary files /dev/null and b/test.txt.gpg differ
