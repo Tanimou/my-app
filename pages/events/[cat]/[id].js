@@ -7,7 +7,7 @@ export default function singleeventpage({data}) {
       <div>
         {/* create 3 div */}
       
-            <Image width={1000} height={'500'} alt={data.title} src={data.image} />
+            <Image width={1000} height={500} alt={data.title} src={data.image} />
             <h2>{data.title}</h2>
             <p>{data.description}</p>
       </div>

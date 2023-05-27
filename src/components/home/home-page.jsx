@@ -4,16 +4,21 @@ import styles from "../../../styles/Home.module.css";
 
 export const HomePage = ({ data })=>  {
     return (
-        <main className={styles.main}>
+        <div className="home_body">
             {/* create 3 div */}
 
             {data?.map((cat) => (
-                <Link key={cat.id} href={`/events/${cat.id}`} passHref>
-                    <Image width={200} height={"100"} alt={cat.title} src={cat.image} />
-                    <h2>{cat.title}</h2>
+                <Link className="card" key={cat.id} href={`/events/${cat.id}`} passHref>
+                    <div  className="image"  >
+                        <Image width={600} height={400} alt={cat.title} src={cat.image} />
+                    </div>
+                    <div className="content">
+                        <h2>{cat.title}</h2>
                     <p>{cat.description}</p>
+                    </div>
+                    
                 </Link>
             ))}
-        </main>
+        </div>
     );
 };

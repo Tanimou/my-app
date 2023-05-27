@@ -1,25 +1,10 @@
 import Image from 'next/image'
+import CatEvent from 'src/components/events/CatEvent'
 // import Link
 import Link from 'next/link'
-export default function eventcatpage({ data,pageName }) {
-  return (
-    <div>
-      <h1>Events in { pageName}</h1>
-      <div>
-        {data.map((cat) => (
-          <Link key={cat.id} href={`/events/${cat.city}/${cat.id}`} passHref>
-              
-        
-          <Image width={200} height={'100'} alt={cat.title} src={cat.image} />
-          <h2>{cat.title}</h2>
-          <p>{cat.description}</p>
-            
-          </Link>
-      ))}
-</div>
-    </div>
-  );
-}
+const eventcatpage = ({ data, pageName }) => <CatEvent data={data} pageName={ pageName} />
+
+export default eventcatpage
 
 export async function getStaticPaths() {
   const { events_categories } = await import('data/data.json');
