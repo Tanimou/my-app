@@ -1,19 +1,9 @@
-
+// import SingleEvent
+import SingleEvent from 'src/components/events/SingleEvent'
 import Image from "next/image";
 
-export default function singleeventpage({data}) {
-  return (
-    <div>
-      <div>
-        {/* create 3 div */}
-      
-            <Image width={1000} height={500} alt={data.title} src={data.image} />
-            <h2>{data.title}</h2>
-            <p>{data.description}</p>
-      </div>
-    </div>
-  );
-}
+const EventPage=({data}) => <SingleEvent data={data}/>
+export default EventPage
 
 export async function getStaticPaths() {
   const {allEvents} = await import('/data/data.json')
