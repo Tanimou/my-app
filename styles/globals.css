@@ -121,13 +121,20 @@ main {
   text-transform: uppercase;
   text-shadow: 1px 1px 20px black;
 }
+.cat_events{
+  width: 100%;
+}
 .cat_events .content{
     display: flex;
-  flex-direction: column;
-  flex-wrap:wrap;
-}
-.cat_events .card{
-  display: flex;
   flex-direction: row;
-  gap:30px
+  flex-wrap:wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  margin-right: auto;
+}
+.cat_events .content .card{
+  display: flex;
+  flex-direction: column;
+
 }
