@@ -2,8 +2,8 @@ import Image from 'next/image'
 import CatEvent from 'src/components/events/CatEvent'
 // import Link
 import Link from 'next/link'
-const eventcatpage = ({ data, pageName }) => <CatEvent data={data} pageName={ pageName} />
 
+const eventcatpage = ({ data, pageName }) => <CatEvent data={data} pageName={ pageName} />
 export default eventcatpage
 
 export async function getStaticPaths() {

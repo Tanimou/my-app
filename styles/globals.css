@@ -7,7 +7,7 @@ body {
 }
 header {
   height:100px;
-  padding:10px;
+  padding:15px 30px;
   background:linear-gradient(300deg, #a5e2a3, #63a1d3,transparent);
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@ main {
 
 }
 
-.home_body,
+.home_body
 .card{
   display: flex;
     flex-direction: row-reverse;
@@ -95,11 +95,11 @@ main {
 }
     flex-wrap: wrap;
 }
-.home_body,
+.home_body
 .content{
   width: 50%;
 }
-.home_body,
+.home_body
 .image{
   width: 40%;
 }
@@ -129,12 +129,77 @@ main {
   flex-direction: row;
   flex-wrap:wrap;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 30px;
   margin-right: auto;
 }
-.cat_events .content .card{
+.cat_events, .content, .card{
   display: flex;
   flex-direction: column;
 
+}
+
+/* add some cool styling */
+.formControl {
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.label{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.formControl, .input {
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 16px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.formControl .input:focus {
+  outline: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+ .submitButton {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.submitButton:hover {
+  background-color: #3e8e41;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+.success-message{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
