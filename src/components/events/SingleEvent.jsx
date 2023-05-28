@@ -22,35 +22,51 @@ const SingleEvent = ({ data }) => {
     const eventId = router?.query.id;
     const email = emailInputRef.current.value;
     try {
-      const response = await fetch("/api/register/", {
-        method: "POST",
+      //use the api/handler endpoint
+      const response2 = await fetch(`/api/handler?email=${email}&eventId=${eventId}`, {
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, eventId }),
       });
-      console.log("response", response);
-      if (!response.ok) {
+      console.log("response2", response2);
+      if (!response2.ok) {
         throw new Error("Failed to register user");
       }
 
-      const data = await response.json();
-      console.log("data", data);
-      if (data) {
-        // Show the success message and confetti
-        setShowSuccessMessage(true);
-        setConfetti(true);
-        setTimeout(() => {
-          // Hide the success message and confetti after 3 seconds
-          setShowSuccessMessage(false);
-          setConfetti(false);
-        }, 3000);
-        console.log("success");
-      }
-      return data;
-    } catch (error) {
+          const response = await fetch("/api/register/",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, eventId }),
+          });
+          console.log("response", response);
+          if (!response.ok) {
+            throw new Error("Failed to register user");
+          }
+
+          const data = await response.json();
+          console.log("data", data);
+          if (data) {
+            // Show the success message and confetti
+            setShowSuccessMessage(true);
+            setConfetti(true);
+            setTimeout(() => {
+              // Hide the success message and confetti after 3 seconds
+              setShowSuccessMessage(false);
+              setConfetti(false);
+            }, 3000);
+            console.log("success");
+          }
+          return data;
+        }
+    catch (error)
+    {
       console.error(error);
     }
+
   };
 
   return (
