@@ -22,17 +22,7 @@ const SingleEvent = ({ data }) => {
     const eventId = router?.query.id;
     const email = emailInputRef.current.value;
     try {
-      //use the api/handler endpoint
-      const response2 = await fetch(`/api/handler?email=${email}&eventId=${eventId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      console.log("response2", response2);
-      if (!response2.ok) {
-        throw new Error("Failed to register user");
-      }
+
 
           const response = await fetch("/api/register/",
           {
